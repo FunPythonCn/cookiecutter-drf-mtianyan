@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'drf_mmall.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', '{{cookiecutter.模块名称}}.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

@@ -13,7 +13,7 @@ def get_lower_case_name(text):
     return "".join(lst).lower()
 
 
-module_name = "api"
+app_name = "{{cookiecutter.初始化app名称}}"
 with open(Path(__file__).parent.parent.resolve().joinpath("models.py")) as fr:
     code_content = fr.read()
 
@@ -21,7 +21,7 @@ model_list = re.findall('class (.*)\(models.Model\):', code_content)
 serializers_txt = f"""
 from rest_framework import serializers
 
-from {module_name}.models import {", ".join(model_list)}
+from {app_name}.models import {", ".join(model_list)}
 """
 for model in model_list:
     serializers_txt += f"""
@@ -42,8 +42,8 @@ serializers_list = [one + "Serializer" for one in model_list]
 viewset_txt = f"""
 from rest_framework import viewsets
 
-from {module_name}.models import {", ".join(model_list)}
-from {module_name}.serializers import {", ".join(serializers_list)}
+from {app_name}.models import {", ".join(model_list)}
+from {app_name}.serializers import {", ".join(serializers_list)}
 """
 
 for model_name in model_list:
@@ -59,7 +59,7 @@ else:
     with open('views.py', 'w') as fw:
         fw.write(viewset_txt)
 
-url_txt = f"""from {module_name} import views
+url_txt = f"""from {app_name} import views
 from django.urls import re_path, include, path
 from rest_framework.routers import DefaultRouter
 

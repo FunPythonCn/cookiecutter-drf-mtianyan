@@ -19,6 +19,5 @@ from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/manage/', include('api.urls')),
-    path('api/docs/', include_docs_urls(title='mmall 文档')),
+    path('api/v1/', include('{{cookiecutter.初始化app名称}}.urls')),
 ]
