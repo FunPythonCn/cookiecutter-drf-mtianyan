@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = '{{cookiecutter.初始化app名称}}.urls'
+ROOT_URLCONF = '{{cookiecutter.模块名称}}.urls'
 
 TEMPLATES = [
     {
