@@ -40,7 +40,9 @@ else:
 
 serializers_list = [one + "Serializer" for one in model_list]
 viewset_txt = f"""
+from requests import Response
 from rest_framework import viewsets
+from rest_framework.views import APIView
 
 from {app_name}.models import {", ".join(model_list)}
 from {app_name}.serializers import {", ".join(serializers_list)}
