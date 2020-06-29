@@ -13,7 +13,7 @@ def get_lower_case_name(text):
     return "".join(lst).lower()
 
 
-app_name = "{{cookiecutter.初始化app名称}}"
+app_name = "api"
 with open(Path(__file__).parent.parent.resolve().joinpath("models.py")) as fr:
     code_content = fr.read()
 
@@ -40,9 +40,7 @@ else:
 
 serializers_list = [one + "Serializer" for one in model_list]
 viewset_txt = f"""
-from requests import Response
 from rest_framework import viewsets
-from rest_framework.views import APIView
 
 from {app_name}.models import {", ".join(model_list)}
 from {app_name}.serializers import {", ".join(serializers_list)}
