@@ -2,5 +2,7 @@
   "项目名称": "MtianyanProject",
   "初始化app名称": "api",
   "模块名称": "{{ cookiecutter.项目名称.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
-  "数据库名称": ""
+  "数据库名称": "",
+  "数据库用户名": "",
+  "数据库密码": ""
 }
